@@ -4,8 +4,8 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-unpeurave = "==0.1.0"
-
+vyper = "==0.3.10"
+django = "==3.2.24"
 
 [requires]
 python_version = "3.10"
