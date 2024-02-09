@@ -1,3 +1,0 @@
-vyper==0.3.10
-
-unpeurave==0.1.0
