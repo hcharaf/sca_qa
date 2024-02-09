@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-vyper = "==0.3.10"
+vyper = "==0.3.8"
 django = "==3.2.24"
 
 [requires]
