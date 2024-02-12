@@ -9,5 +9,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "pasbeaucoupmoinsrave": "^0.2.0"
   }
 }
