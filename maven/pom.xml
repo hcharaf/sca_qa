@@ -1,0 +1,25 @@
+<project simple_project="http://simple_project.org">
+<dependencies>
+    <dependency>
+        <groupId>mydep</groupId>
+        <artifactId>mydep</artifactId>
+        <version>1.2.0</version>
+    </dependency>
+    <dependency>
+        <groupId>mydep2</groupId>
+        <artifactId>mydep2</artifactId>
+        <version>2.2.0</version>
+    </dependency>
+    <dependency>
+        <groupId>mydep3</groupId>
+    </dependency>
+    <dependency>
+        <artifactId>mydep4</artifactId>
+        <version>2.2.0</version>
+    </dependency>
+    <dependency>
+        <groupId>mydep5</groupId>
+        <artifactId>mydep5</artifactId>
+    </dependency>
+</dependencies>
+</project>

@@ -1,0 +1,42 @@
+{
+    "name": "yarn-parser",
+    "version": "1.0.0",
+    "description": "Tiny web service for parsing yarn.lock files",
+    "main": "index.js",
+    "scripts": {
+      "start": "node index.js",
+      "test": "mocha"
+    },
+    "engines": {
+      "node": "14.2.0"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/librariesio/yarn-parser.git"
+    },
+    "keywords": [
+      "yarn",
+      "parse",
+      "lock",
+      "dependencies"
+    ],
+    "author": "Andrew Nesbitt",
+    "license": "AGPL-3.0",
+    "bugs": {
+      "url": "https://github.com/librariesio/yarn-parser/issues"
+    },
+    "homepage": "https://github.com/librariesio/yarn-parser#readme",
+    "dependencies": {
+      "@yarnpkg/lockfile": "^1.0.0",
+      "body-parser": "^1.15.2",
+      "express": "^4.14.0",
+      "js-yaml": "^4.1.0"
+    },
+    "devDependencies": {
+      "chai": "^4.1.2",
+      "mocha": "^5.2.0",
+      "request": "^2.87.0",
+      "test": "^0.6.0"
+    },
+    "packageManager": "yarn@1.22.17"
+  }
