@@ -1,5 +1,7 @@
 github.com/notaryproject/notation v0.7.0-alpha.1 h1:M6YyZVQE1qKNISHBoYxO/MXNNOzYdIIAkmuXoeG+UcE=
 github.com/notaryproject/notation v0.7.0-alpha.1/go.mod h1:Cpn1U1692yLPBGhZG3ahjmVqLWpXyx1vVnX6BZGtQjI=
+github.com/notaryproject/notation v1.0.0-rc.3 h1:9s1Xl22Cl9I9WrR/iUF18SjZd+6LennC0CiUWTiXfSc=
+github.com/notaryproject/notation v1.0.0-rc.3/go.mod h1:gm6ZZLX97BB/8lkP9YONy/W97DCHIXlm/6GS0jLFuKE=
 golang.org/x/crypto v0.1.0 h1:MDRAIl0xIo9Io2xV565hzXHw3zVseKrJKodhohM5CjU=
 golang.org/x/crypto v0.1.0/go.mod h1:RecgLatLF4+eUMCP1PoPZQb+cVrJcOPbHkTkbkB9sbw=
 golang.org/x/crypto v0.16.0 h1:mMMrFzRSCF0GvB7Ne27XVtVAaXLrPmgPC7/v0tkwHaY=
