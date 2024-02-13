@@ -1,0 +1,48 @@
+name: Rename Files
+
+on:
+  workflow_dispatch:
+    inputs:
+      option:
+        description: 'Select option'
+        required: true
+        default: 'Vuln'
+        options:
+          - 'Vuln'
+          - 'Safe'
+
+jobs:
+  rename_files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Rename Files
+        run: |
+          if [ ${{ github.event.inputs.option }} == 'Vuln' ]; then
+            mv go/safe/go.mod go/safe/stop-go.mod
+            mv maven/safe/pom.xml maven/safe/stop-pom.xml
+            mv npm/safe/package-lock.json npm/safe/stop-package-lock.json
+            mv pypi/safe/Pipfile.lock pypi/safe/stop-Pipfile.lock
+            mv ruby/safe/Gemfile.lock ruby/safe/stop-Gemfile.lock
+            mv go/vuln/stop-go.mod go/vuln/go.mod
+            mv maven/vuln/stop-pom.xml maven/vuln/pom.xml
+            mv npm/vuln/stop-package-lock.json npm/vuln/package-lock.json
+            mv pypi/vuln/stop-Pipfile.lock pypi/vuln/Pipfile.lock
+            mv ruby/vuln/stop-Gemfile.lock ruby/vuln/Gemfile.lock
+          elif [ ${{ github.event.inputs.option }} == 'Safe' ]; then
+            mv go/vuln/go.mod go/vuln/stop-go.mod
+            mv maven/vuln/pom.xml maven/vuln/stop-pom.xml
+            mv npm/vuln/package-lock.json npm/vuln/stop-package-lock.json
+            mv pypi/vuln/Pipfile.lock pypi/vuln/stop-Pipfile.lock
+            mv ruby/vuln/Gemfile.lock ruby/vuln/stop-Gemfile.lock
+            mv go/safe/stop-go.mod go/safe/go.mod
+            mv maven/safe/pom.xml maven/safe/pom.xml
+            mv npm/safe/stop-package-lock.json npm/safe/package-lock.json
+            mv pypi/safe/stop-Pipfile.lock pypi/safe/Pipfile.lock
+            mv ruby/safe/stop-Gemfile.lock ruby/safe/Gemfile.lock
+          else
+            echo "Invalid option selected."
+            exit 1
+          fi
