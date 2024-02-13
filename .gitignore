@@ -1,0 +1,10 @@
+/go/safe
+/go/vuln
+/maven/safe
+/maven/vuln
+/npm/safe
+/npm/vuln
+/pypi/safe
+/pypi/vuln
+/ruby/safe
+/ruby/vuln
