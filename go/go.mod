@@ -1,1 +1,1 @@
-safe/go.mod
+vuln/go.mod
