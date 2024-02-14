@@ -10,12 +10,6 @@ on:
         options:
           - 'Vuln'
           - 'Safe'
-      name:
-        description: 'Name'
-        required: true
-      email:
-        description: 'Email'
-        required: true
 
 jobs:
   change_states:
@@ -26,8 +20,8 @@ jobs:
 
       - name: Change dirs
         run: |
-          git config --global user.name "${{ github.event.inputs.name }}"
-          git config --global user.email "${{ github.event.inputs.email }}"
+          git config --global user.name "Github Bot"
+          git config --global user.email "haya.charafeddine@gitguardian.com"
           if [ ${{ github.event.inputs.choice }} == 'Vuln' ]; then
             cp go/vuln/gggo.mod go/go.mod
             cp maven/vuln/ggpom.xml maven/pom.xml
