@@ -31,11 +31,6 @@ jobs:
             mv npm/vuln/stop-package-lock.json npm/vuln/package-lock.json
             mv pypi/vuln/stop-Pipfile.lock pypi/vuln/Pipfile.lock
             mv ruby/vuln/stop-Gemfile.lock ruby/vuln/Gemfile.lock
-            git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
-            git config --global user.email "username@users.noreply.github.com"
-            git add .
-            git commit -m "${{ env.CI_COMMIT_MESSAGE }}"
-            git push
           elif [ ${{ github.event.inputs.option }} == 'Safe' ]; then
             mv go/vuln/go.mod go/vuln/stop-go.mod
             mv maven/vuln/pom.xml maven/vuln/stop-pom.xml
@@ -47,12 +42,16 @@ jobs:
             mv npm/safe/stop-package-lock.json npm/safe/package-lock.json
             mv pypi/safe/stop-Pipfile.lock pypi/safe/Pipfile.lock
             mv ruby/safe/stop-Gemfile.lock ruby/safe/Gemfile.lock
-            git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
-            git config --global user.email "username@users.noreply.github.com"
-            git add .
-            git commit -m "${{ env.CI_COMMIT_MESSAGE }}"
-            git push
           else
             echo "Invalid option selected."
             exit 1
           fi
+      - name: Commit Changes
+          run: |
+            git add .
+            git commit -m "Updated files based on selected option"   
+      - name: Push Changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          branch: main
+          github_token: ${{ secrets.GITHUB_TOKEN }}
