@@ -41,6 +41,7 @@ jobs:
             mv npm/vuln/stop-package-lock.json npm/vuln/package-lock.json
             mv pypi/vuln/stop-Pipfile.lock pypi/vuln/Pipfile.lock
             mv ruby/vuln/stop-Gemfile.lock ruby/vuln/Gemfile.lock
+            git rm -r --cached .
             git add .
             git commit -am "Repo is Vuln"
           elif [ ${{ github.event.inputs.choice }} == 'Safe' ]; then
@@ -54,6 +55,7 @@ jobs:
             mv npm/safe/stop-package-lock.json npm/safe/package-lock.json
             mv pypi/safe/stop-Pipfile.lock pypi/safe/Pipfile.lock
             mv ruby/safe/stop-Gemfile.lock ruby/safe/Gemfile.lock
+            git rm -r --cached .
             git add .
             git commit -am "Repo is Safe"
           else
