@@ -1,6 +1,9 @@
 name: Rename Files
 
 on:
+  push:
+      branches:
+        - main
   workflow_dispatch:
     inputs:
       option:
@@ -16,7 +19,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@main
+        with:
+          github_token: ${{ secrets.RENAME_TOKEN }}
 
       - name: Rename Files
         run: |
