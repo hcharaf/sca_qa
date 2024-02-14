@@ -53,4 +53,6 @@ jobs:
             echo "Invalid option selected."
             exit 1
           fi
+          git config --global user.name "Haya Charaf Eddine"
+          git config --global user.email "haya.charafeddine@gitguardian.com"
           git push
