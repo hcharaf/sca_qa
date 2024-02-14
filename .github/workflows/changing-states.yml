@@ -23,8 +23,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@main
-        with:
-          github_token: ${{ secrets.RENAME_TOKEN }}
+        # with:
+        #   github_token: ${{ secrets.RENAME_TOKEN }}
 
       - name: Change dirs
         run: |
