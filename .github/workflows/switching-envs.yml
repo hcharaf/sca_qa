@@ -51,7 +51,7 @@ jobs:
             mv pypi/vuln/Pipfile.lock pypi/vuln/stop-Pipfile.lock
             mv ruby/vuln/Gemfile.lock ruby/vuln/stop-Gemfile.lock
             mv go/safe/stop-go.mod go/safe/go.mod
-            mv maven/safe/pom.xml maven/safe/pom.xml
+            mv maven/safe/stop-pom.xml maven/safe/pom.xml
             mv npm/safe/stop-package-lock.json npm/safe/package-lock.json
             mv pypi/safe/stop-Pipfile.lock pypi/safe/Pipfile.lock
             mv ruby/safe/stop-Gemfile.lock ruby/safe/Gemfile.lock
