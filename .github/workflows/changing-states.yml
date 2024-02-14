@@ -1,7 +1,6 @@
 name: Changing States
 
 on:
-  push:
   workflow_dispatch:
     inputs:
       choice:
