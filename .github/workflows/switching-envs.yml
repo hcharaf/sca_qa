@@ -4,8 +4,9 @@ on:
   push:
   workflow_dispatch:
     inputs:
-      option:
-        description: 'Select option'
+      choice:
+        type: choice
+        description: 'Vuln or Safe?'
         required: true
         default: 'Vuln'
         options:
