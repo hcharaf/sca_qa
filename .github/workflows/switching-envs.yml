@@ -32,7 +32,7 @@ jobs:
         run: |
           git config --global user.name "${{ github.event.inputs.name }}"
           git config --global user.email "${{ github.event.inputs.email }}"
-          if [ ${{ github.event.inputs.option }} == 'Vuln' ]; then
+          if [ ${{ github.event.inputs.choice }} == 'Vuln' ]; then
             mv go/safe/go.mod go/safe/stop-go.mod
             mv maven/safe/pom.xml maven/safe/stop-pom.xml
             mv npm/safe/package-lock.json npm/safe/stop-package-lock.json
@@ -45,7 +45,7 @@ jobs:
             mv ruby/vuln/stop-Gemfile.lock ruby/vuln/Gemfile.lock
             git add .
             git commit -am "Repo is Vuln"
-          elif [ ${{ github.event.inputs.option }} == 'Safe' ]; then
+          elif [ ${{ github.event.inputs.choice }} == 'Safe' ]; then
             mv go/vuln/go.mod go/vuln/stop-go.mod
             mv maven/vuln/pom.xml maven/vuln/stop-pom.xml
             mv npm/vuln/package-lock.json npm/vuln/stop-package-lock.json
