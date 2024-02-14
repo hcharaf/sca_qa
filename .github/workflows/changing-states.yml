@@ -26,35 +26,25 @@ jobs:
         with:
           github_token: ${{ secrets.RENAME_TOKEN }}
 
-      - name: Rename Files
+      - name: Change dirs
         run: |
           git config --global user.name "${{ github.event.inputs.name }}"
           git config --global user.email "${{ github.event.inputs.email }}"
           if [ ${{ github.event.inputs.choice }} == 'Vuln' ]; then
-            mv go/safe/go.mod go/safe/stop-go.mod
-            mv maven/safe/pom.xml maven/safe/stop-pom.xml
-            mv npm/safe/package-lock.json npm/safe/stop-package-lock.json
-            mv pypi/safe/Pipfile.lock pypi/safe/stop-Pipfile.lock
-            mv ruby/safe/Gemfile.lock ruby/safe/stop-Gemfile.lock
-            mv go/vuln/stop-go.mod go/vuln/go.mod
-            mv maven/vuln/stop-pom.xml maven/vuln/pom.xml
-            mv npm/vuln/stop-package-lock.json npm/vuln/package-lock.json
-            mv pypi/vuln/stop-Pipfile.lock pypi/vuln/Pipfile.lock
-            mv ruby/vuln/stop-Gemfile.lock ruby/vuln/Gemfile.lock
+            cp go/vuln/gggo.mod go/go.mod
+            cp maven/vuln/ggpom.xml maven/pom.xml
+            cp npm/vuln/ggpackage-lock.json npm/package-lock.json
+            cp pypi/vuln/ggPipfile.lock pypi/Pipfile.lock
+            cp ruby/vuln/ggGemfile.lock ruby/Gemfile.lock
             git rm -r --cached .
             git add .
             git commit -am "Repo is Vuln"
           elif [ ${{ github.event.inputs.choice }} == 'Safe' ]; then
-            mv go/vuln/go.mod go/vuln/stop-go.mod
-            mv maven/vuln/pom.xml maven/vuln/stop-pom.xml
-            mv npm/vuln/package-lock.json npm/vuln/stop-package-lock.json
-            mv pypi/vuln/Pipfile.lock pypi/vuln/stop-Pipfile.lock
-            mv ruby/vuln/Gemfile.lock ruby/vuln/stop-Gemfile.lock
-            mv go/safe/stop-go.mod go/safe/go.mod
-            mv maven/safe/stop-pom.xml maven/safe/pom.xml
-            mv npm/safe/stop-package-lock.json npm/safe/package-lock.json
-            mv pypi/safe/stop-Pipfile.lock pypi/safe/Pipfile.lock
-            mv ruby/safe/stop-Gemfile.lock ruby/safe/Gemfile.lock
+            cp go/safe/gggo.mod go/go.mod
+            cp maven/safe/ggpom.xml maven/pom.xml
+            cp npm/safe/ggpackage-lock.json npm/package-lock.json
+            cp pypi/safe/ggPipfile.lock pypi/Pipfile.lock
+            cp ruby/safe/ggGemfile.lock ruby/Gemfile.lock
             git rm -r --cached .
             git add .
             git commit -am "Repo is Safe"
