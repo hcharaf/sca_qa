@@ -34,8 +34,6 @@ jobs:
             mv npm/vuln/stop-package-lock.json npm/vuln/package-lock.json
             mv pypi/vuln/stop-Pipfile.lock pypi/vuln/Pipfile.lock
             mv ruby/vuln/stop-Gemfile.lock ruby/vuln/Gemfile.lock
-            git add .
-            git commit -am "Repo is Vuln"
           elif [ ${{ github.event.inputs.option }} == 'Safe' ]; then
             mv go/vuln/go.mod go/vuln/stop-go.mod
             mv maven/vuln/pom.xml maven/vuln/stop-pom.xml
@@ -47,12 +45,12 @@ jobs:
             mv npm/safe/stop-package-lock.json npm/safe/package-lock.json
             mv pypi/safe/stop-Pipfile.lock pypi/safe/Pipfile.lock
             mv ruby/safe/stop-Gemfile.lock ruby/safe/Gemfile.lock
-            git add .
-            git commit -am "Repo is Safe"
           else
             echo "Invalid option selected."
             exit 1
           fi
           git config --global user.name "Haya Charaf Eddine"
           git config --global user.email "haya.charafeddine@gitguardian.com"
+          git add .
+          git commit -am "Repo is modified"
           git push
