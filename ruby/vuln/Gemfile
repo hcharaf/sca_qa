@@ -2,8 +2,5 @@
 
 source "https://rubygems.org"
 # bundle install --path vendor/bundle
-gem "omniauth"
-gem "omniauth-oauth2"
-gem "rdoc"
 gem 'activesupport', '~> 5.2', '>= 5.2.7'
 gem 'webrat', '~> 0.3.0'
