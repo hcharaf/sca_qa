@@ -1,31 +1,32 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    childprocess (4.1.0)
+    activesupport (5.2.8.1)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (>= 0.7, < 2)
+      minitest (~> 5.1)
+      tzinfo (~> 1.1)
     concurrent-ruby (1.2.3)
-    et-orbi (1.2.7)
-      tzinfo
-    fugit (1.9.0)
-      et-orbi (~> 1, >= 1.2.7)
-      raabro (~> 1.4)
-    raabro (1.4.0)
-    rexml (3.2.6)
-    rubyzip (2.3.2)
-    rufus-scheduler (3.9.1)
-      fugit (~> 1.1, >= 1.1.6)
-    selenium-webdriver (4.1.0)
-      childprocess (>= 0.5, < 5.0)
-      rexml (~> 3.2, >= 3.2.5)
-      rubyzip (>= 1.2.2)
-    tzinfo (2.0.6)
+    i18n (1.14.1)
       concurrent-ruby (~> 1.0)
+    mini_portile2 (2.8.5)
+    minitest (5.22.2)
+    nokogiri (1.13.10)
+      mini_portile2 (~> 2.8.0)
+      racc (~> 1.4)
+    racc (1.7.3)
+    thread_safe (0.3.6)
+    tzinfo (1.2.11)
+      thread_safe (~> 0.1)
+    webrat (0.3.4)
+      nokogiri (>= 1.1.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  rufus-scheduler
-  selenium-webdriver
+  activesupport (~> 5.2, >= 5.2.7)
+  webrat (~> 0.3.0)
 
 BUNDLED WITH
    2.1.4
